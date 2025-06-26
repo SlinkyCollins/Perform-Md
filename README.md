@@ -55,3 +55,9 @@ If you want to add new components using shadcn:
 ```bash
 npx shadcn-ui@latest add <component-name>
 ```
+
+### 🤝 Need Help?
+Feel free to reach out in the team group chat or drop me a DM.
+Let’s make this awesome together! 🔥
+
+Happy coding! 🎯💪🏽

@@ -30,7 +30,7 @@ const Aboutdoctor = () => {
             </div>
             <Button
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-slate-900 group"
+              className="border-none text-black hover:bg-cyan-950 hover:text-slate-900 group"
               asChild
             >
               <Link href="/about">
@@ -44,7 +44,7 @@ const Aboutdoctor = () => {
           <div className="order-first lg:order-last">
             <div className="relative">
               <img
-                src="/placeholder.svg?height=400&width=300"
+                src="/doctor.png"
                 alt="Dr. Peter Michael"
                 className="w-full max-w-sm mx-auto lg:max-w-none rounded-lg shadow-xl"
               />

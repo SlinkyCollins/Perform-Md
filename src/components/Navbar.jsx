@@ -105,7 +105,7 @@ const Navbar = () => {
 
             {/* Desktop Action Buttons */}
             <div className="hidden lg:flex items-center gap-4">
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900" asChild>
+              <Button variant="outline" className="border-none text-black hover:bg-cyan-950 hover:text-slate-900" asChild>
                 <Link href="/call">
                   CALL NOW
                   <Phone className="w-4 h-4 ml-2" />
@@ -223,7 +223,7 @@ const Navbar = () => {
                     </Button>
                     <Button
                       variant="outline"
-                      className="w-full border-white text-white hover:bg-white hover:text-slate-900 h-12 text-lg"
+                      className="w-full border-none text-black hover:bg-cyan-950 hover:text-slate-900 h-12 text-lg"
                       asChild
                     >
                       <Link href="/call" onClick={() => setIsOpen(false)}>

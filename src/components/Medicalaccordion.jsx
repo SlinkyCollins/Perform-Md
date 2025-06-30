@@ -90,7 +90,7 @@ const Medicalaccordion = () => {
           <AccordionItem value="elbow-conditions" className="border-0">
             <AccordionTrigger className="bg-slate-800 hover:bg-slate-700 px-6 py-4 lg:py-6 rounded-lg border-l-4 border-cyan-400 text-left hover:no-underline group">
               <div className="flex items-center justify-between w-full">
-                <h3 className="text-lg lg:text-xl font-bold">Commonly Treated Elbow Conditions</h3>
+                <h3 className="text-lg lg:text-xl font-bold">Commonly Shoulder Conditions</h3>
               </div>
             </AccordionTrigger>
             <AccordionContent className="bg-slate-800 px-6 pb-6 rounded-b-lg border-l-4 border-cyan-400 mt-1">
@@ -118,7 +118,7 @@ const Medicalaccordion = () => {
             </AccordionContent>
           </AccordionItem>
 
-          {/* Commonly Treated Hip Conditions */}
+          {/* Commonly Treated Hip Conditions
           <AccordionItem value="hip-conditions" className="border-0">
             <AccordionTrigger className="bg-slate-800 hover:bg-slate-700 px-6 py-4 lg:py-6 rounded-lg border-l-4 border-cyan-400 text-left hover:no-underline">
               <div className="flex items-center justify-between w-full">
@@ -141,7 +141,7 @@ const Medicalaccordion = () => {
                 </ul>
               </div>
             </AccordionContent>
-          </AccordionItem>
+          </AccordionItem>\\ */}
 
           {/* Patient Outcome Data */}
           <AccordionItem value="outcome-data" className="border-0">

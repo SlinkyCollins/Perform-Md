@@ -73,7 +73,7 @@ const Footer = () => {
         </div>
 
         {/* Social Media and Logo Section */}
-        <div className="mt-8 lg:mt-12 pt-6 lg:pt-8 border-t border-slate-800">
+        <div className="mt-8 lg:mt-12 pt-6 lg:pt-8 border-t border-slate-800 ">
           <div className="flex flex-col items-center space-y-6">
             {/* Social Media Icons */}
             <div className="flex items-center space-x-6">

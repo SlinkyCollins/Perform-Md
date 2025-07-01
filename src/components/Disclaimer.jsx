@@ -2,7 +2,7 @@ import React from 'react'
 
 const Disclaimer = () => {
   return (
-    <section className="bg-slate-900 text-white py-8 lg:py-12">
+    <section className="bg-[#2a333d] text-white py-8 lg:py-12">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-4xl mx-auto">
           <h2 className="text-cyan-400 text-lg lg:text-xl font-bold mb-4 lg:mb-6">DISCLAIMER</h2>

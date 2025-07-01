@@ -9,23 +9,27 @@ export default function HeroForm() {
   return (
     <section
       className="relative py-16 lg:py-24 bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/placeholder.svg?height=600&width=1200')`,
-      }}
+      // style={{
+      //   backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/placeholder.svg?height=600&width=1200')`,
+
+      // }}
     >
-      <div className="container mx-auto px-4">
-        <div className="max-w-md mx-auto lg:max-w-lg">
+      <div className="container mx-auto px-4 ">
+        <div className="max-w-md lg:max-w-lg">
           <div className="text-white text-center lg:text-left mb-8">
-            <h1 className="text-3xl lg:text-4xl font-bold mb-4">
+            <h1 className="text-3xl lg:text-4xl font-bold mb-4 font-stage">
               Get Back To The Activities You Love, Without Surgery.
             </h1>
             <p className="text-lg text-gray-200 mb-6">
-              Receive A Regenexx® Patient Info Packet By Email To Learn More About Our Regenerative Orthopedic
+              Receive A Regenexx® Patient Info Packet
+              <span className="block"> By Email To Learn More About Our </span>
+               Regenerative Orthopedic
               Procedures.
             </p>
           </div>
 
           <form className="space-y-4">
+            <div className="flex flex-col sm:flex-row gap-4">
             <Input
               type="text"
               name="firstName"
@@ -38,6 +42,8 @@ export default function HeroForm() {
               placeholder="Last Name *"
               className="h-12 bg-white/90 border-0 placeholder:text-gray-600"
             />
+
+            </div>
             <Input
               type="email"
               name="email"

@@ -14,70 +14,49 @@ const page = () => {
     <>
     <Navbar />
     <HeroForm />
-    <section className=" bg-gray-800 py-16 px-6">
-        <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
-                    { <span className="text-white">Regenexx® Procedures</span> }
-                    { <span className="text-cyan-400"> For Foot & Ankle Condition</span> }
-                </h1>
-             
-            </div>
+  
 
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                <div className="relative">
-                    <div className="bg-gray-600 rounded-lg overflow-hidden shadow-2xl">
-                        <Image
-                        src=""
-                        alt=""
-                        width={512}
-                        height={589}
-                        classNameName="mx-auto"
-                        />
-                    </div>
-                </div>
+        
+ <section className='grid lg:grid-cols-2 p-15  gap-2 lg items-center bg-gray-900 w-full'>
+                <div className='text-left p-5 ms-20'>
+                   <div>
+                     <h4 className="text-3xl md:text-4xl text-white lg:text-5xl font-bold leading-tight mb-4">
+                    Regenexx® Procedures For Foot & Ankle Condition
+                     </h4>
+                   </div>
+                    <p className='text-lg mb-3 text-white'>Orthopedic procedures are non-surgical injection-based procedures for people suffering from foot and ankle injuries, arthritis, or other conditions that cause pain. These procedures utilize <span class="highlight">concentrated repair cells</span> that are obtained from your own bone marrow or blood to promote your body's own natural ability to heal.
 
-                <div className="space-y-8">
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                        Regenexx® Procedures
-                    </h3>
+                        <br /> <br />
 
-                
-                    <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
-                       <p class="intro-text">
-                    Orthopedic procedures are non-surgical injection-based procedures for people suffering from foot and ankle injuries, arthritis, or other conditions that cause pain. These procedures utilize <span class="highlight">concentrated repair cells</span> that are obtained from your own bone marrow or blood to promote your body's own natural ability to heal.
-                </p>
-                
-                <p class="detailed-text">
                     Current surgical treatment options for common ankle injuries and arthritis, include ankle arthroscopy to "clean up" damaged cartilage, fusion of ankle bones where cartilage has been lost, and tendon grafts screwed in place to strengthen loose connections between bones. All are painful and are often not be effective in the long run. These surgeries typically involve a painful post-surgical recovery with a lengthy rehab period to restore strength and mobility to the ankle. <span class="highlight">Regenexx may help reduce pain and improve function</span> for those with foot or ankle pain due to injury or arthritis eliminating the need for these invasive surgeries.
-                </p>
-                    </div>
+                    </p>
                 </div>
-            </div>
-        </div>
-    </section>
+                <div>
+                    <Image src="/pain.jpg" alt="image" width={652} height={289}/>
+                </div>
+
+ </section>
     <Medicalaccordion />
-    <section class="bg-gray-800 py-16 px-6">
+    <section class="bg-[#1D242C] py-16 px-6">
             <div class="max-w-7xl mx-auto">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     
                     <div class="space-y-6">
-                        <h2 class="text-4xl lg:text-5xl font-bold leading-tight">
-                            <span class="text-white">Considering</span> 
-                            <span class="text-gradient">Ankle Surgery,</span> 
-                            <span class="text-gradient">Fusion or Replacement?</span>
-                        </h2>
+                        <h4 class="text-4xl lg:text-5xl font-bold text-white leading-tight">
+                            Considering Ankle Surgery, <br />
+                            Fusion or Replacement?
+                        </h4>
                         
                         <div class="space-y-4 text-gray-300 text-lg leading-relaxed">
                             <p>
-                                As an alternative to surgery and the long recuperative period involved, 
-                                <span class="text-blue-400 font-medium">tears to Foot and Ankle tendons and ligaments</span> 
+                                As an alternative to surgery and the long recuperative period involved,
+                                tears to Foot and Ankle tendons and ligaments
                                 and Ankle Arthritis can often be treated with the healing agents from your own body, 
                                 promoting your body's ability to do its natural job of healing.
                             </p>
                             
                             <p>
-                                <span class="text-blue-400 font-medium">Regenexx Procedures</span> may help alleviate pain and improve function 
+                            Regenexx Procedures may help alleviate pain and improve function 
                                 with a highly specialized, non-surgical, precise image-guided injection procedure. 
                                 Patients are often encouraged to walk the same day, and most experience little 
                                 downtime from the procedure.
@@ -111,10 +90,10 @@ const page = () => {
                 <div class="grid lg:grid-cols-2 gap-12 items-start">
                     
                     <div class="space-y-6">
-                        <h2 class="text-4xl lg:text-5xl font-bold leading-tight">
-                            <span class="text-gradient">Ankle Ligament Tears,</span> <br />
-                            <span class="text-gradient">Sprains and Instability</span>
-                        </h2>
+                        <h4 class="text-4xl lg:text-5xl text-white font-bold leading-tight">
+                            Ankle Ligament Tears, <br />
+                            Sprains and Instability
+                        </h4>
                         
                         <div class="text-gray-300 text-lg leading-relaxed">
                             <p>
@@ -123,7 +102,7 @@ const page = () => {
                                 minor sprains, they can become painful, loose, and weak. This changes how 
                                 you walk, putting painful stress on other joints of the foot, as well as 
                                 making it more likely that you will sprain the ankle again. This leads to 
-                                a cycle of <span class="text-red-400 font-medium">chronic pain and instability</span>.
+                                a cycle of chronic pain and instability.
                             </p>
                         </div>
                     </div>    

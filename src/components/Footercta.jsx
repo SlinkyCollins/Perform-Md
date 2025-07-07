@@ -5,9 +5,9 @@ import Link from "next/link"
 export default function Footercta() {
   return (
     <section
-      className="relative py-16 lg:py-24 bg-cover bg-center bg-no-repeat"
+      className="relative py-18 lg:py-38 bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/placeholder.svg?height=600&width=1200')`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/footerCtaImg.png')`,
       }}
     >
       <div className="container mx-auto px-4">
@@ -23,7 +23,7 @@ export default function Footercta() {
             <Button
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-slate-900 w-full sm:w-auto"
+              className="border-none text-black hover:bg-cyan-950 hover:text-slate-900 w-full sm:w-auto"
               asChild
             >
               <Link href="/contact">

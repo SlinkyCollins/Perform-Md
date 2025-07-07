@@ -1,6 +1,7 @@
 import Disclaimer from "@/components/Disclaimer";
 import Footer from "@/components/Footer";
 import HeroForm from "@/components/Heroform";
+import HowRegenexxWorks from "@/components/HowRegenexxWorks";
 import Navbar from "@/components/Navbar";
 import Patientstories from "@/components/Patientstories";
 import Testimonials from "@/components/Testimonials";
@@ -10,9 +11,9 @@ const page = () => {
   return (
     <div>
       <Navbar />
-      <HeroForm />
+      <HeroForm bgImage="/fullshot.png" />
 
-      <div className="bg-slate-800 text-white p-8 w-full ">
+      <div className="bg-[#29313a] text-white p-8 w-full ">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-bold mb-4 mt-4">
@@ -27,12 +28,7 @@ const page = () => {
 
             {/* Right Column - Doctor Image */}
             <div className="flex items-center justify-center">
-              <div className="bg-gray-600 rounded-lg p-4 w-full h-64 flex items-center justify-center">
-                <div className="text-gray-400 text-center">
-                  <div className="w-16 h-16 bg-gray-500 rounded-full mx-auto mb-2"></div>
-                  <p className="text-sm">Doctor Image Placeholder</p>
-                </div>
-              </div>
+              <img src="/Frame 4.png"></img>
             </div>
 
             <div className="space-y-6">
@@ -88,12 +84,7 @@ const page = () => {
 
             {/* Right Column - Medical Professional Image */}
             <div className="flex items-center justify-center">
-              <div className="bg-gray-600 rounded-lg p-4 w-full h-64 flex items-center justify-center">
-                <div className="text-gray-400 text-center">
-                  <div className="w-16 h-16 bg-gray-500 rounded-full mx-auto mb-2"></div>
-                  <p className="text-sm">Medical Professional Image</p>
-                </div>
-              </div>
+             <img src="/Frame 5.png"></img>
             </div>
           </div>
         </div>
@@ -107,13 +98,13 @@ const page = () => {
         </div>
       </div>
 
-      <div class="bg-slate-900 text-white w-full px-4 sm:px-6 lg:px-8 py-12">
+      <div class="bg-[#1e242b] text-white w-full px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
         <div class="max-w-7xl mx-auto text-center">
           <h2 class="text-xl sm:text-2xl md:text-3xl font-bold leading-snug">
             Regenexx Is A World Leader In The Field Of Orthopedic Regenerative
             <br class="hidden sm:block" />
             Medicine Based On Scientific Publications And Is Arguably The
-            World’s
+            World's
             <br class="hidden sm:block" />
             Most Advanced Platform For In-Office Interventional Orthopedics.
           </h2>
@@ -156,131 +147,7 @@ const page = () => {
 
       <Testimonials />
 
-      <div className="bg-slate-900 gradient-bg min-h-screen mx-auto px-4 py-16">
-        <h2 className="text-4xl lg:text-5xl font-bold text-white text-center mb-16">
-          How Regenexx Procedures Work
-        </h2>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
-          <div className="procedure-card rounded-2xl p-8 relative">
-            <div className="mb-8">
-              <div
-                className="text-sm procedure-title mb-2"
-                style={{ color: "#00A990" }}
-              >
-                Regenexx
-              </div>
-              <div
-                className="element-symbol text-8xl font-bold mb-2 text-white"
-                style={{ color: "#00A990" }}
-              >
-                Sd
-              </div>
-              <div
-                className="text-sm text-gray-400"
-                style={{ color: "#00A990" }}
-              >
-                Bone Marrow Concentrate
-              </div>
-            </div>
-
-            <div className="space-y-6 text-gray-300 leading-relaxed">
-              <p>
-                <span className="highlight-link">Regenexx-SD</span> is{" "}
-                <span className="highlight-link">Bone Marrow Concentrate</span>.
-                These repair cells from your own body live inside all of us in
-                various tissues, poised to leap into action to repair damage as
-                it occurs. As we age or have big injuries, we may not be able to
-                recruit enough of these cells to the site to fully repair the
-                area.
-              </p>
-
-              <p>
-                The <span className="highlight-link">Regenexx-SD</span>{" "}
-                Procedure helps overcome this problem by harvesting{" "}
-                <span className="highlight-link">Bone Marrow</span> from an area
-                of the back of the hip that contains a dense population of these
-                important cells and then concentrating those cells before
-                precisely injecting them into the injured area using advanced
-                imaging guidance.
-              </p>
-
-              <p>
-                The goal of the procedure is to reduce pain and improve function
-                by promoting the body's own ability to heal naturally. This
-                Patented{" "}
-                <span className="highlight-link">Bone Marrow Concentrate</span>{" "}
-                Protocol can be used for a wide range of orthopedic conditions.
-                Your Regenexx doctor will evaluate your condition and your
-                imaging to determine whether a{" "}
-                <span className="highlight-link">bone marrow concentrate</span>{" "}
-                or platelet-based treatment is the best option for your
-                orthopedic condition.
-              </p>
-            </div>
-          </div>
-
-          <div className="procedure-card rounded-2xl p-8 relative">
-            <div className="mb-8">
-              <div
-                className="text-sm procedure-title mb-2"
-                style={{ color: "#00ADBC" }}
-              >
-                Regenexx
-              </div>
-              <div
-                className="element-symbol text-8xl font-bold mb-2 text-white"
-                style={{ color: "#00ADBC" }}
-              >
-                Scp
-              </div>
-              <div
-                className="text-sm text-gray-400"
-                style={{ color: "#00ADBC" }}
-              >
-                Super Concentrated PRP
-              </div>
-            </div>
-
-            <div className="space-y-6 text-gray-300 leading-relaxed">
-              <p>
-                <span className="highlight-link">
-                  Platelet Rich Plasma (PRP)
-                </span>{" "}
-                and <span className="highlight-link">Platelet Lysate</span> are
-                Platelet procedures that contain healing{" "}
-                <span className="highlight-link">growth factors</span> from your
-                own blood that promote your body's natural ability to repair
-                itself.
-              </p>
-
-              <p>
-                The use of <span className="highlight-link">PRP</span> to treat
-                joint, tendon, ligament, and muscle injuries is becoming well
-                known, thanks to exposure from professional athletes. Platelet
-                injections have a stimulating effect on the repair cells within
-                the targeted area, making those cells work harder to perform
-                their natural job of healing the body. Like all Regenexx
-                procedures, Regenexx <span className="highlight-link">SCP</span>{" "}
-                procedures are performed with high-level imaging guidance to
-                ensure the most accurate placements of cells into the desired
-                area.
-              </p>
-
-              <p>
-                Our Advanced Platelet Procedures are more concentrated and purer
-                than <span className="highlight-link">PRP</span> created by the
-                automated machines used at most{" "}
-                <span className="highlight-link">regenerative medicine</span>{" "}
-                clinics, increasing the ability to stimulate the body's natural
-                healing response. Platelet procedures are commonly used for soft
-                tissue injuries, mild arthritis, spine conditions, and around
-                nerves.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <HowRegenexxWorks/>
 
       <div class="bg-slate-900 text-white w-full px-4 sm:px-6 lg:px-8 py-16">
         <div class="max-w-6xl mx-auto text-center">
@@ -288,7 +155,7 @@ const page = () => {
             Regenexx Is A World Leader In The Field Of Orthopedic Regenerative
             <br class="hidden sm:block" />
             Medicine Based On Scientific Publications And Is Arguably The
-            World’s
+            World's
             <br class="hidden sm:block" />
             Most Advanced Platform For In-Office Interventional Orthopedics.
           </h2>
@@ -333,7 +200,7 @@ const page = () => {
         </div>
       </div>
 
-      <div className="bg-slate-800 text-white p-8 w-full">
+      <div className="bg-[#2a333d] text-white p-8 w-full">
         {/* Patient Results Section */}
         <div className="pt-8 max-w-7xl mx-auto">
           {/* Header with Dropdown */}

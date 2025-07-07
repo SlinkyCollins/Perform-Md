@@ -47,7 +47,7 @@ const Testimonials = () => {
     }
 
     return (
-        <section className="bg-slate-900 text-white py-12 lg:py-16">
+        <section className="bg-slate-800 text-white py-12 lg:py-16">
             <div className="container mx-auto px-4">
                 {/* Mobile View - Single Testimonial */}
                 <div className="lg:hidden">

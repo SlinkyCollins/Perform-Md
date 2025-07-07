@@ -1,191 +1,180 @@
 "use client"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
-const hipConditions = [
-  "Arthritis",
-  "Meniscus Tears",
-  "ACL, MCL, PCL, Or LCL Sprain Or Tear",
-  "Knee Instability",
-  "Patellofemoral Syndrome/ Chondromalacia",
-  "Pes Anserine Bursitis",
-  "Baker's Cyst",
-  "Patellar Tendonitis",
-  "Biceps Femoris Insertional Tendinopathy",
-  "Hamstrings Tendinopathy",
-]
+import { useState } from "react"
+import { ChevronDown } from "lucide-react"
 
-const outcomeData = [
-  {
-    percentage: 88,
-    label: "Up to 88% Average Function Regained",
-    color: "from-cyan-400 to-cyan-500",
-  },
-  {
-    percentage: 34,
-    label: "34% Decrease In Joint Pain After 3 Months",
-    color: "from-slate-400 to-slate-500",
-  },
-  {
-    percentage: 55,
-    label: "55% Overall Improvement After 3 Months",
-    color: "from-cyan-400 to-cyan-500",
-  },
-]
+const MedicalAccordion = ({ treatmentType = "Shoulder", aboutContent, className = "" }) => {
+  const [openItems, setOpenItems] = useState([])
 
-// Circular Progress Component
-function CircularProgress({ percentage, label, color }) {
+  const defaultProgressData = [
+    {
+      percentage: 88,
+      title: "Up To 88%",
+      description: "Average Function Regained",
+    },
+    {
+      percentage: 34,
+      title: "34% Decrease",
+      description: "In Joint Pain After 1-Month",
+    },
+    {
+      percentage: 55,
+      title: "55% Overall",
+      description: "Improvement After 3-Months",
+    },
+  ]
+
+  const defaultAboutContent = (
+    <div className="text-gray-300 space-y-4">
+      <p>
+        Regenexx is the world's most advanced non-surgical stem cell and blood platelet procedures for common injuries
+        and degenerative joint conditions, such as arthritis and avascular necrosis.
+      </p>
+      <p>
+        Our highly skilled physician network consists of interventional orthopedic doctors who have been specially
+        trained in these advanced procedures and hold current medical licenses.
+      </p>
+      <p>
+        We maintain the world's largest research database for stem cell and blood platelet procedures with over 15,000
+        patients tracked long-term.
+      </p>
+    </div>
+  )
+
+  const accordionItems = [
+    {
+      id: "conditions",
+      title: `Commonly Treated ${treatmentType} Conditions`,
+      content: (
+        <div className="text-gray-300 space-y-3">
+          <ul className="space-y-2">
+            <h1>
+              This is not a complete list, so please contact us or complete the Regenexx Candidate Form if you have
+              questions about whether you or your condition can be treated with these non-surgical procedures.
+            </h1>
+            <div className="flex flex-col lg:flex-row lg:gap-[6rem] mt-5">
+              <div>
+                <li>• Arthritis</li>
+                <li>• Meniscus Tears</li>
+                <li>• ACL, MCL, PCL, or LCL sprain or tear</li>
+                <li>• Knee Instability</li>
+                <li>• Patellofemoral Syndrome/Chondromalacia</li>
+              </div>
+              <div>
+                <li>• Pes anserine bursitis</li>
+                <li>• Baker's cyst</li>
+                <li>• Patellar tendonitis</li>
+                <li>• Biceps Femoris Insertional Tendinopathy</li>
+                <li>• Hamstrings Tendinopathy</li>
+              </div>
+            </div>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      id: "patient-data",
+      title: "Patient Outcome Data",
+      progressData: defaultProgressData,
+    },
+    {
+      id: "about",
+      title: "About Regenexx And Our Highly Skilled Physician Network",
+      content: aboutContent || defaultAboutContent,
+    },
+  ]
+
+  const toggleItem = (itemId) => {
+    setOpenItems((prev) => (prev.includes(itemId) ? prev.filter((id) => id !== itemId) : [...prev, itemId]))
+  }
+
+  return (
+    <div className={`bg-[#1D242C] py-16 lg:py-28 px-4 ${className}`}>
+      <div className="max-w-6xl mx-auto">
+        <div className="space-y-1">
+          {accordionItems.map((item, index) => (
+            <div key={item.id} className="border-l-4 border-[#76C0D8]">
+              <button
+                onClick={() => toggleItem(item.id)}
+                className="w-full text-left p-6 bg-[#29313A] hover:bg-[#434B52] transition-colors duration-200 flex justify-between items-center"
+              >
+                <h3 className="text-lg md:text-xl font-semibold text-white pr-4">{item.title}</h3>
+                <div
+                  className={`transform transition-transform duration-300 ${openItems.includes(item.id) ? "rotate-180" : ""}`}
+                >
+                  <ChevronDown className="w-6 h-6 text-[#76C0D8] flex-shrink-0" />
+                </div>
+              </button>
+
+              <div
+                className={`bg-[#29313A] overflow-hidden transition-all duration-500 ease-in-out ${openItems.includes(item.id) ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
+                  }`}
+              >
+                <div
+                  className={`px-6 pb-6 transform transition-all duration-300 ${openItems.includes(item.id) ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
+                    }`}
+                >
+                  {item.progressData ? (
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-6">
+                      {item.progressData.map((data, idx) => (
+                        <div
+                          key={idx}
+                          className={`transform transition-all duration-500 ${openItems.includes(item.id) ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+                            }`}
+                          style={{ transitionDelay: openItems.includes(item.id) ? `${idx * 100}ms` : "0ms" }}
+                        >
+                          <CircularProgress {...data} />
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="pt-4">{item.content}</div>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const CircularProgress = ({ percentage, title, description }) => {
   const circumference = 2 * Math.PI * 45
   const strokeDasharray = circumference
   const strokeDashoffset = circumference - (percentage / 100) * circumference
 
   return (
-    <div className="flex flex-col items-center space-y-3 p-4">
-      <div className="relative w-24 h-24 lg:w-28 lg:h-28">
+    <div className="flex flex-col items-center text-center space-y-3">
+      <div className="relative w-24 h-24 md:w-28 md:h-28">
         <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
           {/* Background circle */}
-          <circle
-            cx="50"
-            cy="50"
-            r="45"
-            stroke="currentColor"
-            strokeWidth="8"
-            fill="transparent"
-            className="text-slate-700"
-          />
+          <circle cx="50" cy="50" r="45" stroke="#4A5568" strokeWidth="8" fill="none" />
           {/* Progress circle */}
           <circle
             cx="50"
             cy="50"
             r="45"
-            stroke="url(#gradient)"
+            stroke="#76C0D8"
             strokeWidth="8"
-            fill="transparent"
+            fill="none"
             strokeDasharray={strokeDasharray}
             strokeDashoffset={strokeDashoffset}
             strokeLinecap="round"
             className="transition-all duration-1000 ease-out"
           />
-          <defs>
-            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" className={`stop-color-cyan-400`} />
-              <stop offset="100%" className={`stop-color-cyan-500`} />
-            </linearGradient>
-          </defs>
         </svg>
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-2xl lg:text-3xl font-bold text-white">{percentage}%</span>
+          <span className="text-2xl md:text-3xl font-bold text-[#76C0D8]">{percentage}%</span>
         </div>
       </div>
-      <p className="text-xs lg:text-sm text-gray-300 text-center max-w-32 lg:max-w-40">{label}</p>
+      <div className="space-y-1">
+        <h4 className="text-sm md:text-base font-semibold text-white leading-tight">{title}</h4>
+        <p className="text-xs md:text-sm text-gray-300 leading-tight">{description}</p>
+      </div>
     </div>
   )
 }
 
-const Medicalaccordion = () => {
-  return (
-     <section className="bg-slate-900 text-white py-8 lg:py-12">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <Accordion type="single" collapsible className="space-y-4">
-          {/* Commonly Treated Elbow Conditions */}
-          <AccordionItem value="elbow-conditions" className="border-0">
-            <AccordionTrigger className="bg-slate-800 hover:bg-slate-700 px-6 py-4 lg:py-6 rounded-lg border-l-4 border-cyan-400 text-left hover:no-underline group">
-              <div className="flex items-center justify-between w-full">
-                <h3 className="text-lg lg:text-xl font-bold">Commonly Treated Elbow Conditions</h3>
-              </div>
-            </AccordionTrigger>
-            <AccordionContent className="bg-slate-800 px-6 pb-6 rounded-b-lg border-l-4 border-cyan-400 mt-1">
-              <div className="space-y-4 text-gray-300">
-                <p className="text-sm lg:text-base leading-relaxed">
-                  This Is Not A Complete List, So Please Contact Us Or Complete The Regenexx Candidate Form If You Have
-                  Questions About Whether You Or Your Condition Can Be Treated With These Non-Surgical Procedures.
-                </p>
-                <ul className="space-y-2">
-                  {[
-                    "Tennis Elbow (Lateral Epicondylitis)",
-                    "Golfer's Elbow (Medial Epicondylitis)",
-                    "Elbow Arthritis",
-                    "Ulnar Collateral Ligament Injuries",
-                    "Elbow Bursitis",
-                    "Cubital Tunnel Syndrome",
-                  ].map((condition, index) => (
-                    <li key={index} className="flex items-start gap-3 text-sm lg:text-base">
-                      <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
-                      <span>{condition}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </AccordionContent>
-          </AccordionItem>
-
-          {/* Commonly Treated Hip Conditions */}
-          <AccordionItem value="hip-conditions" className="border-0">
-            <AccordionTrigger className="bg-slate-800 hover:bg-slate-700 px-6 py-4 lg:py-6 rounded-lg border-l-4 border-cyan-400 text-left hover:no-underline">
-              <div className="flex items-center justify-between w-full">
-                <h3 className="text-lg lg:text-xl font-bold">Commonly Treated Hip Conditions</h3>
-              </div>
-            </AccordionTrigger>
-            <AccordionContent className="bg-slate-800 px-6 pb-6 rounded-b-lg border-l-4 border-cyan-400 mt-1">
-              <div className="space-y-4 text-gray-300">
-                <p className="text-sm lg:text-base leading-relaxed">
-                  This Is Not A Complete List, So Please Contact Us Or Complete The Regenexx Candidate Form If You Have
-                  Questions About Whether You Or Your Condition Can Be Treated With These Non-Surgical Procedures.
-                </p>
-                <ul className="space-y-2">
-                  {hipConditions.map((condition, index) => (
-                    <li key={index} className="flex items-start gap-3 text-sm lg:text-base">
-                      <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
-                      <span>{condition}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </AccordionContent>
-          </AccordionItem>
-
-          {/* Patient Outcome Data */}
-          <AccordionItem value="outcome-data" className="border-0">
-            <AccordionTrigger className="bg-slate-800 hover:bg-slate-700 px-6 py-4 lg:py-6 rounded-lg border-l-4 border-cyan-400 text-left hover:no-underline">
-              <div className="flex items-center justify-between w-full">
-                <h3 className="text-lg lg:text-xl font-bold">Patient Outcome Data</h3>
-              </div>
-            </AccordionTrigger>
-            <AccordionContent className="bg-slate-800 px-6 pb-6 rounded-b-lg border-l-4 border-cyan-400 mt-1">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-                {outcomeData.map((data, index) => (
-                  <CircularProgress key={index} percentage={data.percentage} label={data.label} color={data.color} />
-                ))}
-              </div>
-            </AccordionContent>
-          </AccordionItem>
-
-          {/* About Regenexx */}
-          <AccordionItem value="about-regenexx" className="border-0">
-            <AccordionTrigger className="bg-slate-800 hover:bg-slate-700 px-6 py-4 lg:py-6 rounded-lg border-l-4 border-cyan-400 text-left hover:no-underline">
-              <div className="flex items-center justify-between w-full">
-                <h3 className="text-lg lg:text-xl font-bold">
-                  About Regenexx And Our Highly Skilled Physician Network
-                </h3>
-              </div>
-            </AccordionTrigger>
-            <AccordionContent className="bg-slate-800 px-6 pb-6 rounded-b-lg border-l-4 border-cyan-400 mt-1">
-              <div className="space-y-4 text-gray-300">
-                <p className="text-sm lg:text-base leading-relaxed">
-                  <span className="font-semibold text-white">Regenexx Physicians</span> represent a very selective,
-                  highly-skilled, interventional orthopedics network that is 100% focused on orthopedic conditions. All
-                  Regenexx physicians are musculoskeletal experts with extensive training and experience in the
-                  diagnosis and treatment of musculoskeletal conditions, as well as complex, image-guided injections of
-                  your body's own healing agents to treat orthopedic issues. Regenexx patient outcomes are tracked in a
-                  registry and with that information, we provide transparent outcome data (below) for those who may be
-                  considering this treatment option.
-                </p>
-              </div>
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      </div>
-    </section>
-  )
-}
-
-export default Medicalaccordion
+export default MedicalAccordion

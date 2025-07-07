@@ -25,19 +25,23 @@ export default function HeroForm() {
             </p>
           </div>
 
-          <form className="space-y-4">
+          <form className="space-y-4 col-6 mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Input
               type="text"
               name="firstName"
               placeholder="First Name *"
               className="h-12 bg-white/90 border-0 placeholder:text-gray-600"
             />
+          
+
             <Input
               type="text"
               name="lastName"
               placeholder="Last Name *"
               className="h-12 bg-white/90 border-0 placeholder:text-gray-600"
             />
+            </div>
             <Input
               type="email"
               name="email"

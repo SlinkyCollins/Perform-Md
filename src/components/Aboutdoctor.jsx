@@ -5,7 +5,7 @@ import Link from "next/link"
 
 const Aboutdoctor = () => {
   return (
-    <section className="bg-slate-900 text-white py-12 lg:py-16">
+    <section className="bg-[#1D242C] text-white py-12 lg:py-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}

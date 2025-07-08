@@ -13,7 +13,7 @@ const page = () => {
   return (
     <>
     <Navbar />
-    <HeroForm />
+    <HeroForm bgImage="/ankle.jpg"/>
   
 
         
@@ -24,30 +24,31 @@ const page = () => {
                     Regenexx® Procedures For Foot & Ankle Condition
                      </h4>
                    </div>
-                    <p className='text-lg mb-3 text-white'>Orthopedic procedures are non-surgical injection-based procedures for people suffering from foot and ankle injuries, arthritis, or other conditions that cause pain. These procedures utilize <span class="highlight">concentrated repair cells</span> that are obtained from your own bone marrow or blood to promote your body's own natural ability to heal.
+                    <p className="text-lg mb-3 text-white">Orthopedic procedures are non-surgical injection-based procedures for people suffering from foot and ankle injuries, arthritis, or other conditions that cause pain. These procedures utilize concentrated repair cells that are obtained from your own bone marrow or blood to promote your body's own natural ability to heal.
 
                         <br /> <br />
 
-                    Current surgical treatment options for common ankle injuries and arthritis, include ankle arthroscopy to "clean up" damaged cartilage, fusion of ankle bones where cartilage has been lost, and tendon grafts screwed in place to strengthen loose connections between bones. All are painful and are often not be effective in the long run. These surgeries typically involve a painful post-surgical recovery with a lengthy rehab period to restore strength and mobility to the ankle. <span class="highlight">Regenexx may help reduce pain and improve function</span> for those with foot or ankle pain due to injury or arthritis eliminating the need for these invasive surgeries.
+                    Current surgical treatment options for common ankle injuries and arthritis, include ankle arthroscopy to "clean up" damaged cartilage, fusion of ankle bones where cartilage has been lost, and tendon grafts screwed in place to strengthen loose connections between bones. All are painful and are often not be effective in the long run. These surgeries typically involve a painful post-surgical recovery with a lengthy rehab period to restore strength and mobility to the ankle.Regenexx may help reduce pain and improve function for those with foot or ankle pain due to injury or arthritis eliminating the need for these invasive surgeries.
                     </p>
                 </div>
                 <div>
-                    <Image src="/pain.jpg" alt="image" width={652} height={289}/>
+                    <Image 
+                    src="/pain.jpg" alt="image" width={652} height={289}/>
                 </div>
 
  </section>
     <Medicalaccordion />
-    <section class="bg-[#1D242C] py-16 px-6">
-            <div class="max-w-7xl mx-auto">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <section className="bg-[#1D242C] py-16 px-6">
+            <div className="max-w-7xl mx-auto">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
                     
-                    <div class="space-y-6">
-                        <h4 class="text-4xl lg:text-5xl font-bold text-white leading-tight">
+                    <div className="space-y-6">
+                        <h4 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
                             Considering Ankle Surgery, <br />
                             Fusion or Replacement?
                         </h4>
                         
-                        <div class="space-y-4 text-gray-300 text-lg leading-relaxed">
+                        <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
                             <p>
                                 As an alternative to surgery and the long recuperative period involved,
                                 tears to Foot and Ankle tendons and ligaments
@@ -64,17 +65,18 @@ const page = () => {
                         </div>
                     </div>
                     
-                    <div class="relative">
-                        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-                            <div class="aspect-video bg-gradient-to-br from-blue-900 to-gray-700 flex items-center justify-center">
-                                <img src="" 
-                                     alt="Medical procedure" 
-                                     class="w-full h-full object-cover" />
-                            </div>
-                            
-                            <div class="absolute inset-0 video-overlay flex items-center justify-center">
-                                <button class="play-button bg-white bg-opacity-90 rounded-full p-6 shadow-lg hover:bg-opacity-100">
-                                    <svg class="w-12 h-12 text-gray-800 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <div className="relative">
+                        <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                                <Image 
+                                    src="/doctor2.jpg"
+                                    alt="Doctor"
+                                    width={652}
+                                    height={367}
+                                />
+                                                            
+                            <div className="absolute inset-0 video-overlay flex items-center justify-center">
+                                <button className="play-button bg-white bg-opacity-90 rounded-full p-6 shadow-lg hover:bg-opacity-100">
+                                    <svg className="w-12 h-12 text-gray-800 ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
                                 </button>
@@ -85,17 +87,17 @@ const page = () => {
             </div>
         </section>
         
-        <section class="py-16 px-6 bg-gray-800 bg-opacity-50">
-            <div class="max-w-7xl mx-auto">
-                <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <section className="py-16 px-6 bg-gray-800 bg-opacity-50">
+            <div className="max-w-7xl mx-auto">
+                <div className="grid lg:grid-cols-2 gap-12 items-start">
                     
-                    <div class="space-y-6">
-                        <h4 class="text-4xl lg:text-5xl text-white font-bold leading-tight">
+                    <div className="space-y-6">
+                        <h4 className="text-4xl lg:text-5xl text-white font-bold leading-tight">
                             Ankle Ligament Tears, <br />
                             Sprains and Instability
                         </h4>
                         
-                        <div class="text-gray-300 text-lg leading-relaxed">
+                        <div className="text-gray-300 text-lg leading-relaxed">
                             <p>
                                 When the ligaments that hold the bones of the ankle joint together are 
                                 partially torn or stretched, as in the case of a bad sprain or repeated 

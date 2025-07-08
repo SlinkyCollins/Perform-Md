@@ -11,7 +11,7 @@ export default function HeroForm({ bgImage }) {
       className="relative py-20 lg:py-60 bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url('${bgImage}')`,
-      }}
+      }}  
     >
       <div className="container mx-auto px-4">
         <div className="max-w-3xl text-white">

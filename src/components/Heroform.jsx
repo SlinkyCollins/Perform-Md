@@ -10,8 +10,12 @@ export default function HeroForm({ bgImage }) {
     <section
       className="relative py-16 lg:py-24 bg-cover bg-center bg-no-repeat"
       style={{
+
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/placeholder.svg?height=600&width=1200')`,
-      }}
+      
+        backgroundImage: `url('${bgImage}')`,
+      }}  
+
     >
       <div className="container mx-auto px-4">
         <div className="max-w-md mx-auto lg:max-w-lg">

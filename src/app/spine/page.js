@@ -312,6 +312,7 @@ const Page = () => {
     <Patientstories/>
     <Disclaimer/>
     <Footer/>
+    
 
   
 

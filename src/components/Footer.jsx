@@ -58,21 +58,33 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Social Media + Logo */}
-      <div className="bg-[#2A333D] py-6 px-4">
-        <div className="flex flex-col items-center space-y-4">
-          {/* Icons */}
-          <div className="flex items-center gap-6">
-            <Link href="https://instagram.com/performmd" aria-label="Instagram" className="text-gray-400 hover:text-cyan-400">
-              <Instagram className="w-6 h-6" />
-            </Link>
-            <Link href="https://youtube.com/performmd" aria-label="YouTube" className="text-gray-400 hover:text-cyan-400">
-              <Youtube className="w-6 h-6" />
-            </Link>
-            <Link href="https://tiktok.com/performmd" aria-label="TikTok" className="text-gray-400 hover:text-cyan-400">
-              <SiTiktok className="w-6 h-6" />
-            </Link>
-          </div>
+        {/* Social Media and Logo Section */}
+        <div className="mt-8 lg:mt-12 pt-6 lg:pt-8 border-t border-slate-800">
+          <div className="flex flex-col items-center space-y-6">
+            {/* Social Media Icons */}
+            <div className="flex items-center space-x-6">
+              <Link
+                href="https://instagram.com/performmd"
+                className="text-gray-400 hover:text-cyan-400 transition-colors"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram className="w-6 h-6" />
+              </Link>
+              <Link
+                href="https://youtube.com/performmd"
+                className="text-gray-400 hover:text-cyan-400 transition-colors"
+                aria-label="Subscribe to our YouTube channel"
+              >
+                <Youtube className="w-6 h-6" />
+              </Link>
+              {/* <Link
+                href="https://tiktok.com/@performmd"
+                className="text-gray-400 hover:text-cyan-400 transition-colors"
+                aria-label="Follow us on TikTok"
+              >
+                <TikTokIcon className="w-6 h-6" />
+              </Link> */}
+            </div>
 
           {/* Logo */}
           <div className="flex flex-col items-center">
